@@ -1,5 +1,8 @@
 package com.company;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
@@ -7,17 +10,14 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Random random = new Random();
         Scanner teclado = new Scanner(System.in);
 
-        String[] nombres = new String[]{
-                "Daniel G", "Abraham Dangond", "Addy Marquez", "Adrian", "Cristina Ortega", "Daniel", "Daniel Ponz",
-                "Daniel Sanchez", "Daniel Luna", "Dario Huerta", "Dayana Vila", "Gonzalo PG", "Houda", "Jeniffer",
-                "Jeyson Olaes", "Jorge Moya", "Josue", "Lorin Muresan", "Melissah", "Miriam", "Oriana Olivo", "Saul", "Silvia",
-                "Victor", "Victor Garcia Dobon"
-        };
+        String[] nombres = new String[25];
+
+        Files.readAllLines(Paths.get("nombres.txt")).toArray(nombres);
 
         System.out.println("Estos son los alumnos.");
 
@@ -27,16 +27,19 @@ public class Main {
 
         }// Recorre la lista de alumnos
 
-        System.out.println("¿De cuanto quieres que sean los grupos? 2 - 3 - 4 alumnos ");
+
+        System.out.println();
+        System.out.println("¿De cuánto quieres que sean los grupos? \n2 - 3 - 4 alumnos ");
         System.out.println();
         int numAlum = teclado.nextInt();
 
-        Collections.shuffle(Arrays.asList(nombres)); // funcion que reordena-baraja el array
+        Collections.shuffle(Arrays.asList(nombres)); // funciÓn que reordena-baraja el array
 
         System.out.println("========================================================================================");
-        System.out.println("============================..HACIENDO LOS GRUPOS..=====================================");
+        System.out.println("============================..FORMANDO LOS GRUPOS..=====================================");
         System.out.println("========================================================================================");
 
+        System.out.println();
 
         switch (numAlum) {
 
