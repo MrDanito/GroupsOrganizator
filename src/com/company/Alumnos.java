@@ -87,7 +87,7 @@ public class Alumnos {
                 int aleatorio = random.nextInt(numgroups);
                 for (int i = 0; i <= nombres.length - 1; i = i + 2) {
 
-                    if (contador == numgroups+1) {
+                    if (contador == numgroups + 1) {
 
                         System.out.println(nombres[i] + " te ha tocado en el grupo " + aleatorio);
                         break;
@@ -104,7 +104,7 @@ public class Alumnos {
                 aleatorio = random.nextInt(numgroups);
                 for (int i = 0; i <= nombres.length - 1; i = i + 3) {
 
-                    if (contador == numgroups+1) {
+                    if (contador == numgroups + 1) {
 
                         System.out.println(nombres[i] + " te ha tocado en el grupo " + aleatorio);
                         break;
@@ -123,7 +123,7 @@ public class Alumnos {
                 aleatorio = random.nextInt(numgroups);
                 for (int i = 0; i <= nombres.length - 1; i = i + 4) {
 
-                    if (contador == numgroups+1) {
+                    if (contador == numgroups + 1) {
 
                         System.out.println(nombres[i] + " te ha tocado en el grupo " + aleatorio);
                         break;
