@@ -52,23 +52,16 @@ public class Menu {
         } while (num != 0);
     }
 
-    public static void clearConsole()
-    {
-        try
-        {
+    public static void clearConsole() {
+        try {
             final String os = System.getProperty("os.name");
 
-            if (os.contains("Windows"))
-            {
+            if (os.contains("Windows")) {
                 Runtime.getRuntime().exec("cls");
-            }
-            else
-            {
+            } else {
                 Runtime.getRuntime().exec("clear");
             }
-        }
-        catch (final Exception e)
-        {
+        } catch (final Exception e) {
             //  Handle any exceptions.
         }
     }
