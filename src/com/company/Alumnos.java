@@ -12,7 +12,6 @@ public class Alumnos {
 
     String[] nombres;
 
-
     public String[] loadAlumnos() throws IOException {
 
         List<String> lines = Files.readAllLines(Paths.get("nombres.txt"));
@@ -64,7 +63,6 @@ public class Alumnos {
         nombres = aux;
 
     }
-
 
     public void selectGroups() {
 
