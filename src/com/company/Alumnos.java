@@ -13,13 +13,21 @@ public class Alumnos {
     String[] nombres;
 
 
-    public String[] showAlumnos() throws IOException {
+    public String[] loadAlumnos() throws IOException {
 
         List<String> lines = Files.readAllLines(Paths.get("nombres.txt"));
         nombres = new String[lines.size()];
         lines.toArray(nombres);
 
+        Collections.shuffle(Arrays.asList(nombres)); // funciÓn que reordena-baraja el array
+
+        return nombres;
+
+    }
+
+    public void showAlumnos() {
         System.out.println("Estos son los alumnos.");
+        System.out.println();
 
         for (int i = 0; i <= nombres.length - 1; i++) {
 
@@ -27,11 +35,36 @@ public class Alumnos {
 
         }// Recorre la lista de alumnos
 
-        Collections.shuffle(Arrays.asList(nombres)); // funciÓn que reordena-baraja el array
+    }
 
-        return nombres;
+    public void deleteAlumno() {
+
+        System.out.println("Que alumno esta ausente");
+
+        int aus = teclado.nextInt() - 1;
+
+        String name = nombres[aus];
+
+        System.out.println(name + " está ausente.");
+
+        for (int i = aus; i < (nombres.length - aus) - 1; i++) {
+
+            nombres[i] = nombres[i + 1];
+
+        }
+
+        String[] aux = new String[nombres.length - 1];
+
+        for (int k = 0; k <= aux.length - 1; k++) {
+            aux[k] = nombres[k];
+        }
+
+        nombres = new String[aux.length];
+
+        nombres = aux;
 
     }
+
 
     public void selectGroups() {
 

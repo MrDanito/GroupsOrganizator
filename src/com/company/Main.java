@@ -12,6 +12,8 @@ public class Main {
 
         Alumnos alumnos = new Alumnos();
 
+        alumnos.loadAlumnos();
+
         int num = -1;
 
         do {
@@ -19,6 +21,8 @@ public class Main {
             System.out.println("Menu:" +
                     "\n1- Mostrar alumnos" +
                     "\n2- Formar grupos" +
+                    "\n3- Ausencia Alumno" +
+                    "\n4- Recargar alumnos" +
                     "\n0- Salir");
 
             num = input.nextInt();
@@ -30,6 +34,12 @@ public class Main {
                     break;
                 case 2:
                     alumnos.selectGroups();
+                    break;
+                case 3:
+                    alumnos.deleteAlumno();
+                    break;
+                case 4:
+                    alumnos.loadAlumnos();
                     break;
                 case 0:
                     System.out.println("Saliendo del programa. Hasta la vista.");
