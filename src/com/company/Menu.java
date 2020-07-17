@@ -11,6 +11,8 @@ public class Menu {
 
     public void menu() throws IOException {
 
+        Menu m = new Menu();
+
         alumnos.loadAlumnos();
 
         int num = -1;
@@ -40,11 +42,35 @@ public class Menu {
                 case 4:
                     alumnos.loadAlumnos();
                     break;
+                case 5:
+                    m.clearConsole();
+                    break;
                 case 0:
                     System.out.println("Saliendo del programa. Hasta la vista.");
             }
 
         } while (num != 0);
+    }
+
+    public static void clearConsole()
+    {
+        try
+        {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+            else
+            {
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e)
+        {
+            //  Handle any exceptions.
+        }
     }
 
 }
