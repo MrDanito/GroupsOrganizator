@@ -24,18 +24,6 @@ public class Alumnos {
 
     }
 
-    public void showAlumnos() {
-        System.out.println("Estos son los alumnos.");
-        System.out.println();
-
-        for (int i = 0; i <= nombres.length - 1; i++) {
-
-            System.out.println(i + 1 + "- " + nombres[i]);
-
-        }// Recorre la lista de alumnos
-
-    }
-
     public void deleteAlumno() {
 
         System.out.println("Que alumno esta ausente");
@@ -46,7 +34,7 @@ public class Alumnos {
 
         System.out.println(name + " está ausente.");
 
-        for (int i = aus; i < (nombres.length - aus) - 1; i++) {
+        for (int i = aus; i < nombres.length -1; i++) {
 
             nombres[i] = nombres[i + 1];
 
@@ -61,6 +49,18 @@ public class Alumnos {
         nombres = new String[aux.length];
 
         nombres = aux;
+
+    }
+
+    public void showAlumnos() {
+        System.out.println("Estos son los alumnos.");
+        System.out.println();
+
+        for (int i = 0; i <= nombres.length - 1; i++) {
+
+            System.out.println(i + 1 + "- " + nombres[i]);
+
+        }// Recorre la lista de alumnos
 
     }
 
